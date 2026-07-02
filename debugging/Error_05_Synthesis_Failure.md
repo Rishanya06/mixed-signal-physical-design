@@ -3,9 +3,6 @@
 
 # Error_05_Synthesis_Failure.md
 
-This is the exact synthesis failure.
-
-```md
 ## Error Message
 
 [STEP 1]
