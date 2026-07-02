@@ -3,7 +3,6 @@
 
 # Error_03_IO_vs_I0.md
 
-This came directly from your linter output.
 
 ```md
 ## Error Message
