@@ -1,0 +1,143 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{url}
+
+\title{AI-Assisted Mixed-Signal Physical Design Flow Using OpenLane and SKY130}
+
+\author{
+\IEEEauthorblockN{Rishanya Shamganth}
+\IEEEauthorblockA{
+Electronics and Communication Engineering\
+AI-Assisted Mixed Signal Physical Design Internship
+}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report presents the reproduction of a mixed-signal physical design flow using OpenLane and the SKY130 Process Design Kit (PDK). The work was inspired by the VSD Mixed Signal Flow repository and focused on understanding analog macro integration, OpenLane implementation stages, debugging, and signoff verification. AI tools were used to accelerate learning, workflow planning, error analysis, and documentation while all implementation results were manually verified.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Mixed-Signal Design, OpenLane, SKY130, Physical Design, Analog Macro Integration, AI-Assisted Engineering
+\end{IEEEkeywords}
+
+\section{Objective}
+
+The objective of this task was to understand the fundamentals of mixed-signal physical design and reproduce a similar RTL-to-GDSII flow using open-source EDA tools. The study covered repository analysis, analog macro integration, OpenLane configuration, synthesis, floorplanning, routing, debugging, and signoff verification.
+
+\section{Reference Repository Study}
+
+The reference repository demonstrates integration of an analog multiplexer macro (AMUX2_3V) into a digital implementation flow. The design uses Verilog, LEF abstractions, and OpenLane configuration files to perform synthesis, placement, routing, timing analysis, and final GDSII generation.
+
+Rather than directly copying the repository, the complete workflow was studied, reproduced, debugged, and documented independently.
+
+\section{AI-Assisted Workflow}
+
+Artificial Intelligence tools were used throughout the project to:
+
+\begin{itemize}
+\item Understand mixed-signal physical design concepts
+\item Explain LEF, DEF, GDS, and LIB abstractions
+\item Analyze synthesis and implementation errors
+\item Interpret OpenLane reports
+\item Organize project documentation
+\item Generate structured debugging workflows
+\end{itemize}
+
+All AI-generated suggestions were verified through terminal outputs, generated reports, and layout inspection.
+
+\section{Experiments and Debugging}
+
+Several implementation issues were encountered during the project:
+
+\begin{itemize}
+\item Duplicate \texttt{spi_slave} module definitions
+\item Signal naming mismatch (IO vs I0)
+\item Analog macro declaration errors
+\item Yosys synthesis failures
+\item OpenLane configuration issues
+\item Magic visualization and layout inspection challenges
+\end{itemize}
+
+Each issue was resolved through iterative debugging and validation before continuing to the next implementation stage.
+
+\section{Results}
+
+The OpenLane flow completed successfully and generated all expected implementation outputs.
+
+\begin{itemize}
+\item GDS Generated Successfully
+\item DEF Generated Successfully
+\item LEF Generated Successfully
+\item DRC Violations = 0
+\item LVS Status = Clean
+\item Setup Timing = Met
+\item Hold Timing = Met
+\end{itemize}
+
+Key implementation metrics obtained from the final run:
+
+\begin{itemize}
+\item Synthesized Cells = 301
+\item Total Cells = 15256
+\item Critical Path = 6.56 ns
+\item Clock Period = 10 ns
+\item Suggested Frequency = 100 MHz
+\end{itemize}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{figures/final_layout.png}
+\caption{Final design_mux layout viewed in Magic.}
+\label{fig:layout}
+\end{figure}
+
+\section{Observations}
+
+The project demonstrated how analog macros can be integrated into a digital physical-design flow using LEF abstractions and OpenLane. The debugging process emphasized the importance of proper module organization, signal consistency, and verification-driven implementation.
+
+AI assistance proved valuable in accelerating learning and troubleshooting while still requiring manual verification at every stage.
+
+\section{Future Work}
+
+Future extensions include:
+
+\begin{itemize}
+\item Multi-macro floorplanning experiments
+\item Power optimization studies
+\item Timing optimization analysis
+\item Larger mixed-signal subsystem implementations
+\item Comparison with commercial EDA flows
+\end{itemize}
+
+\section{Conclusion}
+
+A complete mixed-signal RTL-to-GDSII flow was successfully reproduced using OpenLane and the SKY130 PDK. The final design generated a manufacturable GDSII layout and passed DRC and LVS verification. The project provided practical exposure to physical-design implementation and demonstrated the effectiveness of AI-assisted engineering workflows.
+
+\begin{thebibliography}{1}
+
+\bibitem{repo}
+Praharsha PM,
+``VSD Mixed Signal Flow Repository,''
+GitHub Repository.
+Available:
+\url{https://github.com/praharshapm/vsdmixedsignalflow}
+
+\bibitem{openlane}
+The OpenLane Project.
+Available:
+\url{https://github.com/The-OpenROAD-Project/OpenLane}
+
+\bibitem{sky130}
+SkyWater SKY130 Open PDK.
+Available:
+\url{https://github.com/google/skywater-pdk}
+
+\end{thebibliography}
+
+\end{document}
