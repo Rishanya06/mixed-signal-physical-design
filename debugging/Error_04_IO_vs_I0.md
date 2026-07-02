@@ -3,7 +3,6 @@
 
 # Error_04_Duplicate_spi_slave.md
 
-This is one of the biggest debugging steps you did.
 
 ```md
 ## Error Message
