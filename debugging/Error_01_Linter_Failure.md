@@ -1,6 +1,6 @@
----
+
 ## Error Message
----md
+```md
 [ERROR]: 5 errors found by linter
 [ERROR]: Step 0 (verilator_lint_check) failed
 %Error: /openlane/designs/design_mux/src/AMUX2_3V.v:10:9:
@@ -14,7 +14,7 @@ Duplicate declaration of signal: 'out'
 
 %Error: /openlane/designs/design_mux/src/AMUX2_3V.v:12:9:
 Duplicate declaration of signal: 'select'
-
+```
 ## Problem
 
 The OpenLane flow stopped during the linter stage before synthesis could begin.
