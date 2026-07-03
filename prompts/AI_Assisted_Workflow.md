@@ -7,8 +7,11 @@ Instead of following a fixed tutorial, I used ChatGPT as an interactive engineer
 Every AI-generated suggestion was manually verified before implementation.
 
 Stage 1 – Understanding an Unknown Repository
-Prompt
+```
+## Prompt
 Analyze the vsdmixedsignalflow repository and explain the complete mixed-signal RTL-to-GDS flow as a beginner-friendly roadmap.
+```
+
 How AI Helped
 
 Rather than reading every file manually, AI converted the repository into a structured learning path covering:
