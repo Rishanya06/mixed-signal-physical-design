@@ -1,3 +1,4 @@
+---
 ## Error Message
 ---md
 [ERROR]: 5 errors found by linter
@@ -13,7 +14,6 @@ Duplicate declaration of signal: 'out'
 
 %Error: /openlane/designs/design_mux/src/AMUX2_3V.v:12:9:
 Duplicate declaration of signal: 'select'
---- 
 
 ## Problem
 
