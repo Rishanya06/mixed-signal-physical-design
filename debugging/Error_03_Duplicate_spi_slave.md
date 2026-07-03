@@ -20,12 +20,12 @@ Suggested alternative: 'I0'
 OpenLane failed during synthesis because the spi_slave module was being compiled more than once.
 
 Generating RTLIL representation for module '\spi_slave'.
-
+```
 3. Executing Verilog-2005 frontend:
 /openlane/designs/design_mux/src/spi_slave.v
 
 ERROR: Re-definition of module '\spi_slave'
-
+```
 ## Investigation
 
 The synthesis log was inspected to determine where the duplicate module was being introduced.
@@ -35,9 +35,9 @@ The synthesis log was inspected to determine where the duplicate module was bein
 The spi_slave module already existed inside raven_spi.v.
 
 At the same time, spi_slave.v was also listed separately inside config.json:
-
+```
 "dir::src/spi_slave.v"
-
+```
 As a result, Yosys attempted to compile the same module twice.
 
 ## Fix
