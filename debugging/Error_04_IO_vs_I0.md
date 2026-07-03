@@ -16,12 +16,12 @@ Generating RTLIL representation for module '\spi_slave'.
 /openlane/designs/design_mux/src/spi_slave.v
 
 ERROR: Re-definition of module '\spi_slave'
-
-Investigation
+```
+## Investigation
 
 The top-level module instantiation was reviewed.
 
-Root Cause
+## Root Cause
 
 A typographical error was found:
 
@@ -29,11 +29,12 @@ A typographical error was found:
 
 The letter O was used instead of the digit 0.
 
-Fix
+## Fix
 
 Corrected the connection:
 
 .I0(I0)
-Result
+
+## Result
 
 The warning disappeared and the intended signal was connected correctly.
