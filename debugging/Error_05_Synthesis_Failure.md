@@ -2,6 +2,7 @@
 ---
 
 # Error_05_Synthesis_Failure.md 
+```md
 ## Error Message
 
 [STEP 1]
@@ -12,13 +13,13 @@
 
 ERROR:
 Re-definition of module '\spi_slave'
-
+```
 ## Investigation
 
 The synthesis log was analyzed using:
-
+```md
 grep -i "error" 1-synthesis.log
-
+```
 The error consistently pointed to duplicate compilation of the spi_slave module.
 
 ## Root Cause
