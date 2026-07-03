@@ -1,8 +1,5 @@
 
-
-# docs/04_Analog_Macro_Study.md
-
-# Analog Macro Study
+## Analog Macro Study
 
 ## What is an Analog Macro?
 
