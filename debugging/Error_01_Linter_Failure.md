@@ -19,19 +19,20 @@ Duplicate declaration of signal: 'select'
 
 The OpenLane flow stopped during the linter stage before synthesis could begin.
 
-Investigation
+## Investigation
 
 The linter log was inspected to identify the source of the errors.
 
 Multiple errors were traced back to the analog macro Verilog model (AMUX2_3V.v) and an incorrect signal connection inside design_mux.v.
 
-Root Cause
+## Root Cause
 
 The analog macro file contained duplicate signal declarations and the top-level design referenced a non-existent signal named IO instead of I0.
 
-Fix
+## Fix
 1.Removed duplicate signal declarations from AMUX2_3V.v.
 2.Corrected the signal name IO → I0 in design_mux.v.
-Result
+
+## Result
 
 The linter completed successfully and the design progressed to synthesis.
