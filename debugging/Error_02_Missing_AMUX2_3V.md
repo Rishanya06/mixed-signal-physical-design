@@ -1,5 +1,5 @@
 ## Error Message
-
+```md
 %Error: /openlane/designs/design_mux/src/AMUX2_3V.v:10:9:
 Duplicate declaration of signal: 'I0'
 
@@ -11,7 +11,7 @@ Duplicate declaration of signal: 'out'
 
 %Error: /openlane/designs/design_mux/src/AMUX2_3V.v:12:9:
 Duplicate declaration of signal: 'select'
-
+```
 ## Problem
 
 The custom analog macro AMUX2_3V could not be integrated cleanly into the OpenLane flow.
@@ -19,7 +19,7 @@ Investigation
 
 The analog macro Verilog model was inspected and compared with its module port declaration.
 
-Root Cause
+## Root Cause
 
 The signals were declared twice.
 
@@ -35,10 +35,11 @@ wire out;
 wire select;
 
 The ports already define the signals. Redeclaring them as wires caused Verilator to report duplicate declarations.
-Fix
+
+## Fix
 
 Removed the redundant wire declarations.
 
-Result
+## Result
 
 The analog macro was successfully recognized by OpenLane and the linter errors were eliminated.
