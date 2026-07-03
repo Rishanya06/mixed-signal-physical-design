@@ -14,7 +14,7 @@ Signal definition not found,
 creating implicitly: 'IO'
 
 Suggested alternative: 'I0'
-
+```
 ## Problem
 
 OpenLane failed during synthesis because the spi_slave module was being compiled more than once.
@@ -26,11 +26,11 @@ Generating RTLIL representation for module '\spi_slave'.
 
 ERROR: Re-definition of module '\spi_slave'
 
-Investigation
+## Investigation
 
 The synthesis log was inspected to determine where the duplicate module was being introduced.
 
-Root Cause
+## Root Cause
 
 The spi_slave module already existed inside raven_spi.v.
 
@@ -40,10 +40,10 @@ At the same time, spi_slave.v was also listed separately inside config.json:
 
 As a result, Yosys attempted to compile the same module twice.
 
-Fix
+## Fix
 
 Removed spi_slave.v from the VERILOG_FILES list in config.json.
 
-Result
+## Result
 
 The duplicate module issue was resolved and synthesis proceeded successfully.
