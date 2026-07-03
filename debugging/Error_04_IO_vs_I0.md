@@ -24,17 +24,17 @@ The top-level module instantiation was reviewed.
 ## Root Cause
 
 A typographical error was found:
-
+```
 .I0(IO)
-
+```
 The letter O was used instead of the digit 0.
 
 ## Fix
 
 Corrected the connection:
-
+```
 .I0(I0)
-
+```
 ## Result
 
 The warning disappeared and the intended signal was connected correctly.
